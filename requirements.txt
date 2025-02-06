@@ -1,6 +1,6 @@
 matplotlib==3.9.4
 numpy==1.26.4
-opencv-python==4.10.0.82
+opencv-python
 Pillow==9.5.0
 streamlit==1.25.0
 torch==2.5.1
