@@ -58,8 +58,8 @@ def extract_frames(video_path, output_folder):
         
         # Update progress
         progress = int(frame_count / total_frames * 100)
-        progress_bar.progress(progress)
-        status_text.text(f"Extracting frames: {frame_count}/{total_frames}")
+        # progress_bar.progress(progress)
+        # status_text.text(f"Extracting frames: {frame_count}/{total_frames}")
     
     video.release()
     return frame_count
@@ -174,19 +174,19 @@ def process_video(video_path, output_video_path):
             progress = int((i + 1) / num_frames * 100)
             progress_bar.progress(progress)
             status_text.text(f"Processing frame: {i+1}/{num_frames}")
-            detection_count.text(f"Total detections: {total_detections}")
+            # detection_count.text(f"Total detections: {total_detections}")
         
         # Step 3: Convert frames back to video
         st.write("Step 3: Creating output video...")
         success = frames_to_video(output_frames_dir, output_video_path)
         
         if success:
-            st.success(f"Video processing complete! Detected {total_detections} potential victims.")
+            # st.success(f"Video processing complete! Detected {total_detections} potential victims.")
             return total_detections
         else:
             st.error("Failed to create output video.")
             return 0
-            
+
     finally:
         # Clean up temporary files
         shutil.rmtree(temp_dir, ignore_errors=True)
